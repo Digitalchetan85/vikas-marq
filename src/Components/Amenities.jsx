@@ -34,7 +34,7 @@ const Amenities = () => {
                 </Col>
                   </Row>                
                 </Col>
-                <Col md={6} className="pt- pb-3 pt-md-2 pb-md-2">
+                <Col md={6} className="pt-3 pb-3 pt-md-2 pb-md-2">
                 <h4>Others</h4>
                   <Row>
                     <Col md={4} className="pt-2 pb-2 pt-md-0">
