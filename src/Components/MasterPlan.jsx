@@ -17,7 +17,7 @@ const MasterPlan = () => {
       onSelect={(k) => setKey(k)}
       className="mb-3"
     >
-      <Tab eventKey="all" title="Home">
+      <Tab eventKey="all" title="All">
         {/* <Sonnet /> */}
       </Tab>
       <Tab eventKey="matster-plan" title="Master Plan">
