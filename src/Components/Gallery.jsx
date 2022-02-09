@@ -51,8 +51,9 @@ const Gallery = () => {
     },
   ];
   return (
-    <div>
+    <div id="Gallery" className="py-3 py-md-5">
       <Container>
+      <h2 className="text-center text-primary py-3">Gallery</h2>
         {data.map((item, index) => (
           <>
             <img

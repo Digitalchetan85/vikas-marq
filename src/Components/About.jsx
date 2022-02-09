@@ -9,7 +9,7 @@ const About = () => {
               <Row>
                   <Col md={6} className="align-self-center">
                       <div className="">
-                          <h2 className="py-2 text-primary text-uppercase">Why Marq 2.0</h2>
+                          <h2 className="py-2 text-primary text-uppercase">Why Marq 3.0</h2>
                           <ul>
                               <li className="lh-lg">Find a bit of green everywhere you go</li>
                               <li className="lh-lg">No limit to leisure at the 38,000 sq. ft. clubhouse.</li>
