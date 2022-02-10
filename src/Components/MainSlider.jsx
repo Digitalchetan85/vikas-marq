@@ -1,6 +1,8 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-import Image1 from "../images/slider/avalon-park-1.png"
+import Image1 from "../images/slider/image-1.png"
+import Image2 from "../images/slider/imag-2.png"
+import Image3 from "../images/slider/image-3.png"
 
 const MainSlider = () => {
   const SlidingImages = [
@@ -11,12 +13,12 @@ const MainSlider = () => {
     },
     {
       id: 2,
-      ImageUrl: Image1,
+      ImageUrl: Image2,
       alt: "",
     },
     {
       id: 3,
-      ImageUrl: Image1,
+      ImageUrl: Image3,
       alt: "",
     },
   ];

@@ -1,86 +1,67 @@
 import React from "react";
-import { Container } from "react-bootstrap";
-import { LightBox } from "react-lightbox-pack";
-import "react-lightbox-pack/dist/index.css";
+import { Col, Container, Image, Row } from "react-bootstrap";
+import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox";
+import Image1 from "../images/gallery/image-1.png";
+import Image2 from "../images/gallery/image-2.png";
+import Image3 from "../images/gallery/image-3.png";
+import Image4 from "../images/gallery/image-4.png";
+import Image5 from "../images/gallery/image-5.png";
+import Image6 from "../images/gallery/image-6.png";
+import Image7 from "../images/gallery/image-7.png";
+import Image8 from "../images/gallery/image-8.png";
 
 const Gallery = () => {
-  const [toggle, setToggle] = React.useState(false);
-  const [sIndex, setSIndex] = React.useState(0);
-
-  // Handler
-  const lightBoxHandler = (state, sIndex) => {
-    setToggle(state);
-    setSIndex(sIndex);
-  };
-
-  const data = [
-    {
-      id: 1,
-      image: "https://picsum.photos/500/800",
-      title: "Lorem Ipsum",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos assumenda, velit explicabo non at consequuntur accusamus hic optio alias error nisi sunt sint veniam aperiam similique dolor fugit itaque minima!",
-    },
-    {
-      id: 2,
-      image: "https://picsum.photos/500/800",
-      title: "Lorem Ipsum",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos assumenda, velit explicabo non at consequuntur accusamus hic optio alias error nisi sunt sint veniam aperiam similique dolor fugit itaque minima!",
-    },
-    {
-      id: 3,
-      image: "https://picsum.photos/500/800",
-      title: "Lorem Ipsum",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos assumenda, velit explicabo non at consequuntur accusamus hic optio alias error nisi sunt sint veniam aperiam similique dolor fugit itaque minima!",
-    },
-    {
-      id: 4,
-      image: "https://picsum.photos/500/800",
-      title: "Lorem Ipsum",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos assumenda, velit explicabo non at consequuntur accusamus hic optio alias error nisi sunt sint veniam aperiam similique dolor fugit itaque minima!",
-    },
-    {
-      id: 4,
-      image: "https://picsum.photos/500/800",
-      title: "Lorem Ipsum",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos assumenda, velit explicabo non at consequuntur accusamus hic optio alias error nisi sunt sint veniam aperiam similique dolor fugit itaque minima!",
-    },
+  const images = [
+    { id: 1, imgName: Image1, alt: "", tag: "" },
+    { id: 2, imgName: Image2, alt: "", tag: "" },
+    { id: 3, imgName: Image3, alt: "", tag: "" },
+    { id: 4, imgName: Image4, alt: "", tag: "" },
+    { id: 5, imgName: Image5, alt: "", tag: "" },
+    { id: 6, imgName: Image6, alt: "", tag: "" },
+    { id: 7, imgName: Image7, alt: "", tag: "" },
+    { id: 8, imgName: Image8, alt: "", tag: "" },
   ];
+
   return (
-    <div id="Gallery" className="py-3 py-md-5">
-      <Container>
-      <h2 className="text-center text-primary py-3">Gallery</h2>
-        {data.map((item, index) => (
-          <>
-            <img
-              key={item.id}
-              src={item.image}
-              alt={item.title}
-              style={{ maxHeight: "80vh", maxWidth: "50vw" }}
-              className="m-1"
-              onClick={() => {
-                lightBoxHandler(true, index);
-              }}
-            />
-          </>
-        ))}
-        {/* //Component */}
-        <LightBox
-          state={toggle}
-          event={lightBoxHandler}
-          data={data}
-          imageWidth="60vw"
-          imageHeight="70vh"
-          thumbnailHeight={50}
-          thumbnailWidth={50}
-          setImageIndex={setSIndex}
-          imageIndex={sIndex}
-        />
-      </Container>
+    <div>
+      <div id="portfolio" className="pt-3 pb-3 pt-md-5 pb-md-5">
+        <Container>
+          <h2 className="text-center text-primary">Gallery</h2>
+          <div className="p-2 text-center d-flex flex-row justify-content-center">
+            {/* <div className="m-1">
+              <TagButton name="all" handlesettag={setTag} />
+            </div> */}
+            {/* <div className="m-1">
+              <TagButton name="Interior-design" handlesettag={setTag} />
+            </div>
+            <div className="m-1">
+              <TagButton name="Constructions" handlesettag={setTag} />
+            </div> */}
+            {/* <div className="m-1">
+              <TagButton name="three" handlesettag={setTag} />
+            </div> */}
+          </div>
+          <SimpleReactLightbox>
+            <SRLWrapper>
+              <Row className="g-3">
+                {images.map((item) => (
+                  <Col md={3} key={item.id}>
+                    <div className="m-1 text-center border rounded">
+                      <a href={item.imgName}>
+                        <Image
+                          src={item.imgName}
+                          alt={item.alt}
+                          className="img-fluid"
+                        />
+                      </a>
+                    </div>
+                  </Col>
+                ))}
+              </Row>
+            </SRLWrapper>
+          </SimpleReactLightbox>
+        </Container>
+      </div>
     </div>
   );
 };

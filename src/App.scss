@@ -26,13 +26,20 @@ p {
   text-align: justify !important;
 }
 
+#SRLLightbox {
+  .SRLDownloadButton {
+    display: none !important;
+  }
+}
+
 
 #navbar {
   .nav-link {
     padding-left: 30px;
     padding-right: 30px;
-    font-weight: 600;
+    font-weight: 700;
     color: $primary-color;
+    text-transform: uppercase;
     &:hover {
       color: $secondary-color;
     }
@@ -55,7 +62,7 @@ p {
     &.active {
       right: 0;
     }
-    .btn {
+    .btn-hello {
       background: $primary-color;
       padding: 10px 32px;
       position: absolute;
@@ -82,7 +89,7 @@ p {
       }
     }
     input[type="text"],
-    input[type="email"] {
+    input[type="email"],input[type="tel"] {
       width: 100% !important;
       border: 0;
       height: 35px;
@@ -103,4 +110,26 @@ p {
       color: white;
     }
   }
+}
+
+
+#master-plan {
+  .nav-link {
+    color: $black-color !important;
+  }
+}
+
+#desktop-fix {
+  z-index: 1;
+  .custom {
+    z-index: 4;
+    left: 1%;
+    bottom: 0%;
+  }
+}
+#mobile-fix {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
 }

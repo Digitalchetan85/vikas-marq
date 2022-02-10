@@ -8,9 +8,11 @@ import Gallery from './Components/Gallery';
 import SideForm from './Components/SideForm';
 import Footer from './Components/Footer';
 import Location from './Components/Location';
-import { Modal } from 'react-bootstrap';
 import Pricing from './Components/Pricing';
 import MasterPlan from './Components/MasterPlan';
+import VirtualTour from './Components/VirtualTour';
+import Contact from './Contact';
+import FixedIcons from './Components/FixedIcons';
 
 function App() {
   return (
@@ -18,15 +20,17 @@ function App() {
       <TopHeader />
       <MainSlider />
       <About />
-      <Modal />
       <Overview />
-      <Gallery />
-      <Pricing />
-      <Amenities />
       <MasterPlan />
+      <Pricing />
+      <Gallery />
+      <Amenities />
+      <VirtualTour />
       <SideForm />
       <Location />  
+      <Contact />
       <Footer />
+      <FixedIcons />
     </>
   );
 }

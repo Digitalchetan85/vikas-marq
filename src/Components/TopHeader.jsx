@@ -4,20 +4,38 @@ import Logo from "../images/logo-1.png";
 
 const TopHeader = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="white" variant="light" id="navbar" className="shadow-sm">
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      bg="white"
+      variant="light"
+      id="navbar"
+      className="shadow-sm sticky-top bg-white"
+    >
       <Container>
-        <Navbar.Brand href="/"><Image src={Logo} className="img-fluid" alt=""/></Navbar.Brand>
+        <Navbar.Brand href="/">
+          <Image src={Logo} className="img-fluid" alt="" />
+        </Navbar.Brand>
+        <Nav.Link
+          className="btn-sm btn-danger text-white d-block d-md-none"
+          href="tel:09739269105"
+        ><i className="fa fa-phone-volume"></i> 9739269105
+        </Nav.Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto me-auto">
             <Nav.Link href="#overview">Overview</Nav.Link>
             <Nav.Link href="#master-plan">Master Plan</Nav.Link>
-            <Nav.Link href="#amenities">Amenities</Nav.Link>
-            <Nav.Link href="#gallery">Gallery</Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link href="#virtual-tour">Virtual Tour</Nav.Link>
             <Nav.Link href="#location">Location</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
+            <Nav.Link
+              className="btn-sm btn-danger text-white"
+              href="tel:09739269105"
+            ><i className="fa fa-phone-volume"></i> + 91 9739269105
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -1,23 +1,10 @@
 import React, { useState } from "react";
-import { Button, Row, Col } from "react-bootstrap";
+import { Button, Modal, Row, Col } from "react-bootstrap";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
-const SideForm = () => {
-  const [cssClass, setcssClass] = useState("stickyForm rounded active");
-  const [btnName, setBtnName] = useState("Close Button");
-  const FormClick = (e) => {
-    e.preventDefault();
-    if (cssClass === "stickyForm rounded") {
-      setcssClass("stickyForm rounded active");
-      setBtnName("Close Button");
-    } else {
-      setcssClass("stickyForm rounded");
-      setBtnName("Enquire Now");
-    }
-  };
-
+const ContactModal = (props) => {
   const [formStatus, setformStatus] = useState("");
 
   const initialValues = {
@@ -63,27 +50,23 @@ const SideForm = () => {
       });
   };
   return (
-    <div id="side-contact-form" className="">
-      <div className={cssClass} id="" autoComplete="off">
-        <button className="btn btn-hello" onClick={FormClick}>
-          {btnName}
-        </button>
-        <div id="stickForm" className="form_sticky">
-          <p className="text-center text-white text-capitalize">
-            <strong>
-              Register here and avail <br />
-              the <span className="text-danger">best Offers!!</span>
-            </strong>{" "}
-          </p>
+    <div>
+      <Modal show={props.show} onHide={props.handleClose} centered>
+        <Modal.Header closeButton className="border-0">
+          <Modal.Title className="text-primary text-uppercase border-0">
+            Assetz Marq
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
             onSubmit={onSubmit}
           >
             <Form>
-              <Row>
+              <Row className="mb-3">
                 <Col md={12}>
-                  <div>
+                  <div className="mb-3">
                     <label htmlFor="name" className="form-label">
                       Name
                     </label>
@@ -92,7 +75,6 @@ const SideForm = () => {
                       className="form-control"
                       id="name"
                       name="name"
-                      placeholder="Name"
                     />
                     <small className="text-danger">
                       <ErrorMessage name="name" />
@@ -100,9 +82,9 @@ const SideForm = () => {
                   </div>
                 </Col>
               </Row>
-              <Row>
+              <Row className="mb-3">
                 <Col md={12}>
-                  <div>
+                  <div className="mb-3">
                     <label htmlFor="email" className="form-label">
                       Email
                     </label>
@@ -111,7 +93,6 @@ const SideForm = () => {
                       className="form-control"
                       id="email"
                       name="email"
-                      placeholder="Email"
                     />
                     <small className="text-danger">
                       <ErrorMessage name="email" />
@@ -119,9 +100,9 @@ const SideForm = () => {
                   </div>
                 </Col>
               </Row>
-              <Row>
+              <Row className="mb-3">
                 <Col md={12}>
-                  <div>
+                  <div className="mb-3">
                     <label htmlFor="phone" className="form-label">
                       Phone No
                     </label>
@@ -130,7 +111,6 @@ const SideForm = () => {
                       className="form-control"
                       id="phone"
                       name="phone"
-                      placeholder="Phone No."
                     />
                     <small className="text-danger">
                       <ErrorMessage name="phone" />
@@ -138,7 +118,7 @@ const SideForm = () => {
                   </div>
                 </Col>
               </Row>
-              <Row>
+              <Row className="mb-3">
                 <Col md={12}>
                   {formStatus ? (
                     <div className="alert alert-success p-3 text-center">
@@ -147,7 +127,7 @@ const SideForm = () => {
                   ) : null}
                 </Col>
               </Row>
-              <Row>
+              <Row className="mb-3">
                 <Col md={12}>
                   <div className="">
                     <Button className="btn btn-primary" type="submit">
@@ -158,10 +138,10 @@ const SideForm = () => {
               </Row>
             </Form>
           </Formik>
-        </div>
-      </div>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 };
 
-export default SideForm;
+export default ContactModal;
