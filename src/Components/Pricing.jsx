@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Row, Table } from "react-bootstrap";
-import ContactModal from "./ContactModal";
+import ContactModal from "./Includes/ContactModal";
 
 const Pricing = () => {
   const [show, setShow] = useState(false);
@@ -124,7 +124,7 @@ const Pricing = () => {
         </Row>
       </Container>
 
-      <ContactModal show={show} handleClose={handleClose} />
+      <ContactModal show={show} handleClose={handleClose} title="Download Pricesheet" />
     </div>
   );
 };

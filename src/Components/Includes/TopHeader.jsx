@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Navbar, Nav, Image } from "react-bootstrap";
-import Logo from "../images/logo-1.png";
+import Logo from "../../images/logo-1.png";
 
 const TopHeader = () => {
   return (

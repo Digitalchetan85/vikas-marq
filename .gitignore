@@ -12,6 +12,8 @@
 /build
 
 /Email/vendor
+/Email/composer.jasons
+/Email/composer.lock
 
 # misc
 .DS_Store

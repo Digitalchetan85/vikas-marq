@@ -53,8 +53,9 @@ const ContactModal = (props) => {
     <div>
       <Modal show={props.show} onHide={props.handleClose} centered>
         <Modal.Header closeButton className="border-0">
-          <Modal.Title className="text-primary text-uppercase border-0">
-            Assetz Marq
+        <Modal.Title className="text-primary text-titlecase border-0">
+             {props.title}
+             
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -63,11 +64,11 @@ const ContactModal = (props) => {
             validationSchema={validationSchema}
             onSubmit={onSubmit}
           >
-            <Form>
+            <Form className="">
               <Row className="mb-3">
                 <Col md={12}>
                   <div className="mb-3">
-                    <label htmlFor="name" className="form-label">
+                    <label className="form-label rounded">
                       Name
                     </label>
                     <Field
@@ -85,7 +86,7 @@ const ContactModal = (props) => {
               <Row className="mb-3">
                 <Col md={12}>
                   <div className="mb-3">
-                    <label htmlFor="email" className="form-label">
+                    <label className="form-label">
                       Email
                     </label>
                     <Field
@@ -103,7 +104,7 @@ const ContactModal = (props) => {
               <Row className="mb-3">
                 <Col md={12}>
                   <div className="mb-3">
-                    <label htmlFor="phone" className="form-label">
+                    <label className="form-label">
                       Phone No
                     </label>
                     <Field

@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import aboutImage from "../images/slider/imag-2.png"
-import ContactModal from "./ContactModal";
+import ContactModal from "./Includes/ContactModal";
 
 const About = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  useEffect(() => {
+    setTimeout(function () {
+      setShow(true);
+    }, 7000);
+  }, []);
+
   return (
     <div id="about" className="py-3 py-md-5">
       <Container>
@@ -39,7 +46,7 @@ const About = () => {
         </Row>
       </Container>
 
-      <ContactModal show={show} handleClose={handleClose} />
+      <ContactModal show={show} handleClose={handleClose} title="Download Brochure"/>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox";
-import Image1 from "../images/floor-plans/master-plan.png";
+import Image1 from "../../images/floor-plans/master-plan.png";
 
 const MasterPlanImages = () => {
   const images = [{ id: 1, imgName: Image1, alt: "", tag: "" }];

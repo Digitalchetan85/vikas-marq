@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox";
-import Image1 from "../images/floor-plans/3BHK-3B-2T.png";
-import Image2 from "../images/floor-plans/3BHK-3B-3T.png";
-import Image3 from "../images/floor-plans/3BHK-3B-3T-1.png";
+import Image1 from "../../images/floor-plans/3BHK-3B-2T.png";
+import Image2 from "../../images/floor-plans/3BHK-3B-3T.png";
+import Image3 from "../../images/floor-plans/3BHK-3B-3T-1.png";
 
 const ThreeBHKImages = () => {
   const ThreeBHKImages = [
