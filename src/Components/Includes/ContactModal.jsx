@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Button, Modal, Row, Col } from "react-bootstrap";
+import { Button, Modal, Row, Col, Image } from "react-bootstrap";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import Logo from "../../images/logo-1.png"
 
 const ContactModal = (props) => {
   const [formStatus, setformStatus] = useState("");
@@ -51,31 +52,33 @@ const ContactModal = (props) => {
   };
   return (
     <div>
-      <Modal show={props.show} onHide={props.handleClose} centered>
-        <Modal.Header closeButton className="border-0">
-        <Modal.Title className="text-primary text-titlecase border-0">
+      <Modal show={props.show} onHide={props.handleClose} centered id="cre">
+        <Modal.Header closeButton className="border-0 bg-primary">
+        <Modal.Title className="text-white text-titlecase border-0">
              {props.title}
-             
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
+
+          <div className="text-center py-3">
+            <Image src={Logo} alt="" className="img-fluid" />
+          </div>
+
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
             onSubmit={onSubmit}
           >
-            <Form className="">
+            <Form className="p-3">
               <Row className="mb-3">
                 <Col md={12}>
                   <div className="mb-3">
-                    <label className="form-label rounded">
-                      Name
-                    </label>
                     <Field
                       type="text"
                       className="form-control"
                       id="name"
                       name="name"
+                      placeholder="Name"
                     />
                     <small className="text-danger">
                       <ErrorMessage name="name" />
@@ -86,14 +89,12 @@ const ContactModal = (props) => {
               <Row className="mb-3">
                 <Col md={12}>
                   <div className="mb-3">
-                    <label className="form-label">
-                      Email
-                    </label>
                     <Field
                       type="email"
                       className="form-control"
                       id="email"
                       name="email"
+                      placeholder="Email"
                     />
                     <small className="text-danger">
                       <ErrorMessage name="email" />
@@ -104,14 +105,12 @@ const ContactModal = (props) => {
               <Row className="mb-3">
                 <Col md={12}>
                   <div className="mb-3">
-                    <label className="form-label">
-                      Phone No
-                    </label>
                     <Field
                       type="tel"
                       className="form-control"
                       id="phone"
                       name="phone"
+                      placeholder="Enter phone number"
                     />
                     <small className="text-danger">
                       <ErrorMessage name="phone" />
@@ -119,7 +118,7 @@ const ContactModal = (props) => {
                   </div>
                 </Col>
               </Row>
-              <Row className="mb-3">
+              <Row className="">
                 <Col md={12}>
                   {formStatus ? (
                     <div className="alert alert-success p-3 text-center">
@@ -128,10 +127,10 @@ const ContactModal = (props) => {
                   ) : null}
                 </Col>
               </Row>
-              <Row className="mb-3">
+              <Row className="">
                 <Col md={12}>
                   <div className="">
-                    <Button className="btn btn-primary" type="submit">
+                    <Button className="btn btn-success text-white text-uppercase form-control" type="submit">
                       Submit
                     </Button>
                   </div>
